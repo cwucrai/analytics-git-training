@@ -55,3 +55,7 @@ git checkout -b their-branch-name origin/their-branch-name
 - Always pull the latest changes before starting new work: `git pull origin main`
 - Create descriptive branch names (e.g., `feature/add-login`, `bugfix/fix-header`)
 - Use meaningful commit messages that explain the why, not just the what
+
+
+## Testing - hliu
+- ![Company Logo](https://blog.karenying.com/static/3791821603a2ba731cabf17cc891864b/9a301/github-commit-bot.webp)
