@@ -1,0 +1,25 @@
+[project]
+name = "my_project"
+version = "0.1.0"
+description = "A sample Python project with Ruff linting"
+requires-python = ">=3.8"
+
+
+#### Ruff Linting ####
+[tool.ruff]
+line-length = 88  
+
+[tool.ruff.lint]
+select = ["E", "F"]
+ignore = []
+
+[tool.ruff.format]
+# Use Ruff's built-in formatter
+docstring-code-format = true
+quote-style = "double"
+
+#### Flake8 Linting ####
+[tool.flake8]
+max-line-length = 88
+extend-ignore = []
+exclude = []
