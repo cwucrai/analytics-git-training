@@ -1,39 +1,58 @@
 name: Ruff & Flake8 Lint
 
 on:
-  # Trigger the workflow on pushes to the main branch
   push:
     branches: [ main ]
-  # Trigger the workflow on pull requests targeting the main branch
   pull_request:
     branches: [ main ]
 
 jobs:
-  lint:
-    name: Run Ruff and Flake8
+  ruff-lint:
+    name: Run Ruff Linter
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Check out the repository code
+      # Checkout code
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Step 2: Set up Python environment
+      # Set up Python
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.10' # You can change this version if needed
+          python-version: '3.10'
 
-      # Step 3: Install Ruff and Flake8
-      - name: Install linters
+      # Install Ruff
+      - name: Install Ruff
         run: |
           python -m pip install --upgrade pip
-          pip install ruff flake8
+          pip install ruff
 
-      # Step 4: Run Ruff to lint your code
+      # Run Ruff
       - name: Run Ruff
         run: ruff check .
 
-      # Step 5: Run Flake8 to lint your code
+  flake8-lint:
+    name: Run Flake8 Linter
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout code
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Set up Python
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      # Install Flake8
+      - name: Install Flake8
+        run: |
+          python -m pip install --upgrade pip
+          pip install flake8
+
+      # Run Flake8
       - name: Run Flake8
         run: flake8 .
